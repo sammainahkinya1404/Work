@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title></title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static  'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static  'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static  'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static  'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static  'assets/css/style.css' %}" rel="stylesheet">
+
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+
+
+  
+</head>
+
+<body style="background-color: rgb(4, 27, 41);">
+
+   
+        <nav class="navbar navbar-expand-sm navbar-light " style="background-color: rgb(18, 113, 172);">
+          {% block nav %}{% endblock %}
+      
+            <div class="ml-auto" id="">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        {% block link %}{% endblock %}
+                    </li>
+                 
+                 
+                </ul>
+                
+            </div>
+        </nav>
+
+
+
+    <main id="main"  >
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if messages %}
+                    {%for msg in messages%}
+                    {% if msg %}
+                    <div
+                        class="alert alert-{{msg.tags}} alert-dismissible fade show  text-primary mt-2">
+                        <small style="color: black; font-weight:bold; text-align:center">{{msg}}</small>
+        
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+        
+                    {% endif %}
+                    {%endfor%}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% block  content %}{% endblock %}
+
+
+    </main><!-- End #main -->
+
+    <br>
+    <br>
+    <br>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500" >
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Support</h4>
+                        <p>Join our Telegram or contact us through Whatsapp for assistance</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://t.me/onlinebussinesstoday" target="_blank" style="font-size:40px; color:rgb(20, 23, 241)" ><i class="fa fa-paper-plane" ></i> </a>
+                        <a href="" target="_blank" style="font-size:40px; color:rgb(89, 240, 89)"> <i class="fa fa-whatsapp"></i> </a>
+                        <a href="" target="_blank" style="font-size:40px; color:rgb(216, 45, 45)"  > <i class="fa fa-envelope"></i> </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                    Designed by <a href="">
+                    
+                    </a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static  'assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static  'assets/vendor/bootstrap/js/bootstrap.bundle.min.js ' %}"></script>
+    <script src="{% static  'assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="{% static  'assets/vendor/php-email-form/validate.js ' %}"></script>
+    <script src="{% static  'assets/vendor/venobox/venobox.min.js ' %}"></script>
+    <script src="{% static  'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static  'assets/vendor/counterup/counterup.min.js' %}"></script>
+    <script src="{% static  'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static  'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static  'assets/vendor/aos/aos.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

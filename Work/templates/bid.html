@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bid on Task</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        width: 80%;
+        margin: 2em auto;
+        padding: 2em;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+      }
+
+      input[type="text"], input[type="number"] {
+        width: 100%;
+        margin-bottom: 1em;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .btn:active {
+        background-color: #004699;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bid on Task</h1>
+    <form method="POST" action="{% url 'bid' task.pk %}">
+      {% csrf_token %}
+      <label for="description">Task Description:</label>
+      <input type="text" name="description" value="{{ task.description }}" disabled>
+
+      <label for="duration">Task Duration (days):</label>
+      <input type="number" name="duration" value="{{ task.duration }}" disabled>
+
+      <label for="price">Task Price ($):</label>
+      <input type="number" name="price" value="{{ task.price }}" disabled>
+
+      <label for="bid">Bid Amount ($):</label>
+      <input type="number" name="bid" min="{{ task.price }}" required>
+
+      <div class="btn-container">
+        <button type="submit" class="btn">Confirm Bid</button>
+        <a href="{% url 'task_list' %}" class="btn">Abort</a>
+      </div>
+    </form>
+  </body>
+</html>

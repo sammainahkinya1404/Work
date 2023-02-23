@@ -1,0 +1,85 @@
+ body {
+  background-color: yellow;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.running-image {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.running-image img {
+  width: 100%;
+}
+ .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .login-form {
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #333;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px #ccc;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: yellow;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px #333;
+    cursor: pointer;
+  }
+
+  .form-submit:hover {
+    background-color: black;
+    color: yellow;
+  } 

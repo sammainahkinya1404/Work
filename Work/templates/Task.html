@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task Posting Dashboard</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F5F5F5;
+			font-family: Arial, sans-serif;
+		}
+		header {
+			background-color: #333;
+			color: white;
+			padding: 10px;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 32px;
+			margin-top: 0;
+		}
+		form {
+			background-color: #FFF;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 2px 2px #CCC;
+			margin-top: 20px;
+		}
+		input[type="text"], textarea {
+			padding: 10px;
+			width: 100%;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type="file"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			font-size: 16px;
+			background-color: #F5F5F5;
+			cursor: pointer;
+		}
+		input[type="submit"] {
+			padding: 10px 20px;
+			background-color: #333;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		label {
+			font-size: 16px;
+			font-weight: bold;
+			display: block;
+			margin-bottom: 10px;
+		}
+		select {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Task Posting Dashboard</h1>
+	</header>
+	<div class="container">
+		<form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+			<label for="document">Document</label>
+			<input type="file" name="document" id="document">
+			<label for="description">Task Description</label>
+			<textarea name="description" id="description" rows="5"></textarea>
+			<label for="duration">Task Duration (days)</label>
+			<input type="text" name="duration" id="duration">
+			<label for="price">Task Price</label>
+			<input type="text" name="price" id="price">
+			<input type="submit" value="Post Task">
+		</form>
+	</div>
+</body>
+</html>
