@@ -57,8 +57,8 @@ def bid(request, task_id):
 
 def task_list(request):
     if request.method == 'POST':
-        user=request.user
-        document = request.FILES.get['document']
+        user = request.user
+        document = request.FILES['document']
         description = request.POST['description']
         duration = request.POST['duration']
         price = request.POST['price']
@@ -69,6 +69,7 @@ def task_list(request):
         return redirect('Available')
     else:
          return render(request, 'Task.html')
+
         
   
 
